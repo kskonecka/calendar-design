@@ -1,0 +1,668 @@
+@font-face {
+  font-family: 'raleway';
+  src: url("../fonts/raleway/raleway-regular-webfont.eot");
+  src: url("../fonts/raleway/raleway-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway/raleway-regular-webfont.woff2") format("woff2"), url("../fonts/raleway/raleway-regular-webfont.woff") format("woff"), url("../fonts/raleway/raleway-regular-webfont.ttf") format("truetype"), url("../fonts/raleway/raleway-regular-webfont.svg#ralewayregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latoregular';
+  src: url("../fonts/Lato/lato-regular.eot");
+  src: url("../fonts/Lato/lato-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-regular.woff2") format("woff2"), url("../fonts/Lato/lato-regular.woff") format("woff"), url("../fonts/Lato/lato-regular.ttf") format("truetype"), url("../fonts/Lato/lato-regular.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block;
+}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+#map img {
+		max-width: none;
+}
+*/
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+	you'll have to restore the bullets within content,
+	which is fine because they're probably customized anyway */
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+select, input, textarea {
+  font: 99% sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+td, td img {
+  vertical-align: top;
+}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.grid-container {
+  margin: 0 auto;
+}
+
+.grid-container .row::after, .grid-container .row::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.grid-container [class*='col-'] {
+  float: left;
+  height: 50px;
+}
+
+.grid-container .col-1 {
+  border-right: 1px solid rgba(150, 133, 143, 0.65);
+}
+
+.grid-container .col-1 {
+  width: 12.5%;
+}
+
+.grid-container .col-2 {
+  width: 25%;
+}
+
+.grid-container .col-3 {
+  width: 37.5%;
+}
+
+.grid-container .col-4 {
+  width: 50%;
+}
+
+.grid-container .col-5 {
+  width: 62.5%;
+}
+
+.grid-container .col-6 {
+  width: 75%;
+}
+
+.grid-container .col-7 {
+  width: 87.5%;
+}
+
+.grid-container .col-8 {
+  width: 100%;
+}
+
+.grid-container .width-100 {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: #707070;
+  color: white;
+}
+
+header .logo-and-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header .logo-and-menu .logo {
+  margin-left: 10px;
+}
+
+header .logo-and-menu .logo img {
+  width: 140px;
+}
+
+header .logo-and-menu .logo img:hover {
+  cursor: pointer;
+}
+
+header .logo-and-menu .menu li {
+  display: inline-block;
+  margin-left: 20px;
+  padding: 5px;
+  border: 1px solid #707070;
+  transition: 0.2s;
+}
+
+header .logo-and-menu .menu li:hover {
+  border: 1px solid #76323F;
+  cursor: pointer;
+}
+
+header .logo-and-menu .menu .calendar {
+  border: 1px solid #76323F;
+}
+
+header .user {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .user:hover {
+  cursor: pointer;
+}
+
+header .user .user-photo {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d7cec7;
+}
+
+header .user .down {
+  width: 13px;
+  height: 13px;
+  transform: rotate(-90deg);
+  margin-left: 7px;
+  margin-right: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "raleway";
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container .week-calendar-container {
+  width: 75%;
+}
+
+.container .week-calendar-container .week-calendar {
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 90%;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu {
+  height: 40px;
+  text-align: center;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .schedule-title {
+  font-size: 2rem;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .col-week-name {
+  color: #7d6b76;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  height: 60px;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .col-week-name:hover {
+  cursor: pointer;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .col-week-name span {
+  padding-top: 5px;
+  font-size: 1rem;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .col-week-name img {
+  width: 15px;
+  height: 15px;
+  transform: rotate(-90deg);
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .buttons {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .buttons li {
+  border: 1px solid #565656;
+  padding: 2px;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .buttons li:hover {
+  background-color: #76323F;
+  color: #d7cec7;
+  cursor: pointer;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .buttons .week-button {
+  background-color: #76323F;
+  color: #d7cec7;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .buttons .today-button {
+  margin-left: 5px;
+}
+
+.container .week-calendar-container .week-calendar .row-week-menu .buttons .month-button {
+  border-left: none;
+}
+
+.container .week-calendar-container .week-calendar .row-day-names {
+  margin-top: 40px;
+  color: #565656;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.container .week-calendar-container .week-calendar .row-day-names span {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.container .week-calendar-container .week-calendar .tuesday, .container .week-calendar-container .week-calendar .thursday {
+  position: relative;
+}
+
+.container .week-calendar-container .week-calendar .tuesday .note, .container .week-calendar-container .week-calendar .thursday .note {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #76323F;
+  transform: rotate(-225deg);
+}
+
+.container .week-calendar-container .week-calendar .tuesday .note:hover, .container .week-calendar-container .week-calendar .thursday .note:hover {
+  cursor: pointer;
+}
+
+.container .week-calendar-container .week-calendar .col-title {
+  text-align: center;
+  color: #565656;
+  display: flex;
+  align-items: center;
+}
+
+.container .week-calendar-container .week-calendar .col-title p {
+  font-weight: bolder;
+  text-indent: 3px;
+}
+
+.container .week-calendar-container .week-calendar .foto, .container .week-calendar-container .week-calendar .caster, .container .week-calendar-container .week-calendar .sound, .container .week-calendar-container .week-calendar .row-tv-production {
+  height: 46px;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james, .container .week-calendar-container .week-calendar .foto .col-mary, .container .week-calendar-container .week-calendar .foto .col-john, .container .week-calendar-container .week-calendar .foto .tv-production, .container .week-calendar-container .week-calendar .caster .col-james, .container .week-calendar-container .week-calendar .caster .col-mary, .container .week-calendar-container .week-calendar .caster .col-john, .container .week-calendar-container .week-calendar .caster .tv-production, .container .week-calendar-container .week-calendar .sound .col-james, .container .week-calendar-container .week-calendar .sound .col-mary, .container .week-calendar-container .week-calendar .sound .col-john, .container .week-calendar-container .week-calendar .sound .tv-production, .container .week-calendar-container .week-calendar .row-tv-production .col-james, .container .week-calendar-container .week-calendar .row-tv-production .col-mary, .container .week-calendar-container .week-calendar .row-tv-production .col-john, .container .week-calendar-container .week-calendar .row-tv-production .tv-production {
+  position: relative;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james img, .container .week-calendar-container .week-calendar .foto .col-mary img, .container .week-calendar-container .week-calendar .foto .col-john img, .container .week-calendar-container .week-calendar .foto .tv-production img, .container .week-calendar-container .week-calendar .caster .col-james img, .container .week-calendar-container .week-calendar .caster .col-mary img, .container .week-calendar-container .week-calendar .caster .col-john img, .container .week-calendar-container .week-calendar .caster .tv-production img, .container .week-calendar-container .week-calendar .sound .col-james img, .container .week-calendar-container .week-calendar .sound .col-mary img, .container .week-calendar-container .week-calendar .sound .col-john img, .container .week-calendar-container .week-calendar .sound .tv-production img, .container .week-calendar-container .week-calendar .row-tv-production .col-james img, .container .week-calendar-container .week-calendar .row-tv-production .col-mary img, .container .week-calendar-container .week-calendar .row-tv-production .col-john img, .container .week-calendar-container .week-calendar .row-tv-production .tv-production img {
+  position: absolute;
+  left: 5px;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james img:hover, .container .week-calendar-container .week-calendar .foto .col-mary img:hover, .container .week-calendar-container .week-calendar .foto .col-john img:hover, .container .week-calendar-container .week-calendar .foto .tv-production img:hover, .container .week-calendar-container .week-calendar .caster .col-james img:hover, .container .week-calendar-container .week-calendar .caster .col-mary img:hover, .container .week-calendar-container .week-calendar .caster .col-john img:hover, .container .week-calendar-container .week-calendar .caster .tv-production img:hover, .container .week-calendar-container .week-calendar .sound .col-james img:hover, .container .week-calendar-container .week-calendar .sound .col-mary img:hover, .container .week-calendar-container .week-calendar .sound .col-john img:hover, .container .week-calendar-container .week-calendar .sound .tv-production img:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-james img:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-mary img:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-john img:hover, .container .week-calendar-container .week-calendar .row-tv-production .tv-production img:hover {
+  cursor: pointer;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james [class^="panel-james"], .container .week-calendar-container .week-calendar .foto .col-james [class^="panel-mary"], .container .week-calendar-container .week-calendar .foto .col-james [class^="panel-john"], .container .week-calendar-container .week-calendar .foto .col-james [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .foto .col-mary [class^="panel-james"], .container .week-calendar-container .week-calendar .foto .col-mary [class^="panel-mary"], .container .week-calendar-container .week-calendar .foto .col-mary [class^="panel-john"], .container .week-calendar-container .week-calendar .foto .col-mary [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .foto .col-john [class^="panel-james"], .container .week-calendar-container .week-calendar .foto .col-john [class^="panel-mary"], .container .week-calendar-container .week-calendar .foto .col-john [class^="panel-john"], .container .week-calendar-container .week-calendar .foto .col-john [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .foto .tv-production [class^="panel-james"], .container .week-calendar-container .week-calendar .foto .tv-production [class^="panel-mary"], .container .week-calendar-container .week-calendar .foto .tv-production [class^="panel-john"], .container .week-calendar-container .week-calendar .foto .tv-production [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .caster .col-james [class^="panel-james"], .container .week-calendar-container .week-calendar .caster .col-james [class^="panel-mary"], .container .week-calendar-container .week-calendar .caster .col-james [class^="panel-john"], .container .week-calendar-container .week-calendar .caster .col-james [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .caster .col-mary [class^="panel-james"], .container .week-calendar-container .week-calendar .caster .col-mary [class^="panel-mary"], .container .week-calendar-container .week-calendar .caster .col-mary [class^="panel-john"], .container .week-calendar-container .week-calendar .caster .col-mary [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .caster .col-john [class^="panel-james"], .container .week-calendar-container .week-calendar .caster .col-john [class^="panel-mary"], .container .week-calendar-container .week-calendar .caster .col-john [class^="panel-john"], .container .week-calendar-container .week-calendar .caster .col-john [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .caster .tv-production [class^="panel-james"], .container .week-calendar-container .week-calendar .caster .tv-production [class^="panel-mary"], .container .week-calendar-container .week-calendar .caster .tv-production [class^="panel-john"], .container .week-calendar-container .week-calendar .caster .tv-production [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .sound .col-james [class^="panel-james"], .container .week-calendar-container .week-calendar .sound .col-james [class^="panel-mary"], .container .week-calendar-container .week-calendar .sound .col-james [class^="panel-john"], .container .week-calendar-container .week-calendar .sound .col-james [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .sound .col-mary [class^="panel-james"], .container .week-calendar-container .week-calendar .sound .col-mary [class^="panel-mary"], .container .week-calendar-container .week-calendar .sound .col-mary [class^="panel-john"], .container .week-calendar-container .week-calendar .sound .col-mary [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .sound .col-john [class^="panel-james"], .container .week-calendar-container .week-calendar .sound .col-john [class^="panel-mary"], .container .week-calendar-container .week-calendar .sound .col-john [class^="panel-john"], .container .week-calendar-container .week-calendar .sound .col-john [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .sound .tv-production [class^="panel-james"], .container .week-calendar-container .week-calendar .sound .tv-production [class^="panel-mary"], .container .week-calendar-container .week-calendar .sound .tv-production [class^="panel-john"], .container .week-calendar-container .week-calendar .sound .tv-production [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="panel-james"], .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="panel-mary"], .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="panel-john"], .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="panel-james"], .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="panel-mary"], .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="panel-john"], .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="panel-james"], .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="panel-mary"], .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="panel-john"], .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="panel-james"], .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="panel-mary"], .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="panel-john"], .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="tv-production-panel"] {
+  text-indent: 52px;
+  color: #d7cec7;
+  font-size: 1rem;
+  font-weight: bolder;
+  letter-spacing: 4px;
+  position: absolute;
+  height: 40%;
+  top: 30%;
+  width: 105%;
+  background-color: #76323F;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index: 2;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .foto .col-james [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .foto .col-james [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .foto .col-james [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .foto .col-mary [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .foto .col-mary [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .foto .col-mary [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .foto .col-mary [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .foto .col-john [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .foto .col-john [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .foto .col-john [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .foto .col-john [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .foto .tv-production [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .foto .tv-production [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .foto .tv-production [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .foto .tv-production [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .caster .col-james [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .caster .col-james [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .caster .col-james [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .caster .col-james [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .caster .col-mary [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .caster .col-mary [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .caster .col-mary [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .caster .col-mary [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .caster .col-john [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .caster .col-john [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .caster .col-john [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .caster .col-john [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .caster .tv-production [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .caster .tv-production [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .caster .tv-production [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .caster .tv-production [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .sound .col-james [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .sound .col-james [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .sound .col-james [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .sound .col-james [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .sound .col-mary [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .sound .col-mary [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .sound .col-mary [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .sound .col-mary [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .sound .col-john [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .sound .col-john [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .sound .col-john [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .sound .col-john [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .sound .tv-production [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .sound .tv-production [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .sound .tv-production [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .sound .tv-production [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="panel-james"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="panel-mary"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="panel-john"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="tv-production-panel"]:hover {
+  cursor: pointer;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james .panel-james-mid, .container .week-calendar-container .week-calendar .foto .col-james .panel-john-mid, .container .week-calendar-container .week-calendar .foto .col-mary .panel-james-mid, .container .week-calendar-container .week-calendar .foto .col-mary .panel-john-mid, .container .week-calendar-container .week-calendar .foto .col-john .panel-james-mid, .container .week-calendar-container .week-calendar .foto .col-john .panel-john-mid, .container .week-calendar-container .week-calendar .foto .tv-production .panel-james-mid, .container .week-calendar-container .week-calendar .foto .tv-production .panel-john-mid, .container .week-calendar-container .week-calendar .caster .col-james .panel-james-mid, .container .week-calendar-container .week-calendar .caster .col-james .panel-john-mid, .container .week-calendar-container .week-calendar .caster .col-mary .panel-james-mid, .container .week-calendar-container .week-calendar .caster .col-mary .panel-john-mid, .container .week-calendar-container .week-calendar .caster .col-john .panel-james-mid, .container .week-calendar-container .week-calendar .caster .col-john .panel-john-mid, .container .week-calendar-container .week-calendar .caster .tv-production .panel-james-mid, .container .week-calendar-container .week-calendar .caster .tv-production .panel-john-mid, .container .week-calendar-container .week-calendar .sound .col-james .panel-james-mid, .container .week-calendar-container .week-calendar .sound .col-james .panel-john-mid, .container .week-calendar-container .week-calendar .sound .col-mary .panel-james-mid, .container .week-calendar-container .week-calendar .sound .col-mary .panel-john-mid, .container .week-calendar-container .week-calendar .sound .col-john .panel-james-mid, .container .week-calendar-container .week-calendar .sound .col-john .panel-john-mid, .container .week-calendar-container .week-calendar .sound .tv-production .panel-james-mid, .container .week-calendar-container .week-calendar .sound .tv-production .panel-john-mid, .container .week-calendar-container .week-calendar .row-tv-production .col-james .panel-james-mid, .container .week-calendar-container .week-calendar .row-tv-production .col-james .panel-john-mid, .container .week-calendar-container .week-calendar .row-tv-production .col-mary .panel-james-mid, .container .week-calendar-container .week-calendar .row-tv-production .col-mary .panel-john-mid, .container .week-calendar-container .week-calendar .row-tv-production .col-john .panel-james-mid, .container .week-calendar-container .week-calendar .row-tv-production .col-john .panel-john-mid, .container .week-calendar-container .week-calendar .row-tv-production .tv-production .panel-james-mid, .container .week-calendar-container .week-calendar .row-tv-production .tv-production .panel-john-mid {
+  border-radius: 0;
+  z-index: 1;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james .panel-james-right, .container .week-calendar-container .week-calendar .foto .col-james .panel-mary-right, .container .week-calendar-container .week-calendar .foto .col-james .panel-john-right, .container .week-calendar-container .week-calendar .foto .col-mary .panel-james-right, .container .week-calendar-container .week-calendar .foto .col-mary .panel-mary-right, .container .week-calendar-container .week-calendar .foto .col-mary .panel-john-right, .container .week-calendar-container .week-calendar .foto .col-john .panel-james-right, .container .week-calendar-container .week-calendar .foto .col-john .panel-mary-right, .container .week-calendar-container .week-calendar .foto .col-john .panel-john-right, .container .week-calendar-container .week-calendar .foto .tv-production .panel-james-right, .container .week-calendar-container .week-calendar .foto .tv-production .panel-mary-right, .container .week-calendar-container .week-calendar .foto .tv-production .panel-john-right, .container .week-calendar-container .week-calendar .caster .col-james .panel-james-right, .container .week-calendar-container .week-calendar .caster .col-james .panel-mary-right, .container .week-calendar-container .week-calendar .caster .col-james .panel-john-right, .container .week-calendar-container .week-calendar .caster .col-mary .panel-james-right, .container .week-calendar-container .week-calendar .caster .col-mary .panel-mary-right, .container .week-calendar-container .week-calendar .caster .col-mary .panel-john-right, .container .week-calendar-container .week-calendar .caster .col-john .panel-james-right, .container .week-calendar-container .week-calendar .caster .col-john .panel-mary-right, .container .week-calendar-container .week-calendar .caster .col-john .panel-john-right, .container .week-calendar-container .week-calendar .caster .tv-production .panel-james-right, .container .week-calendar-container .week-calendar .caster .tv-production .panel-mary-right, .container .week-calendar-container .week-calendar .caster .tv-production .panel-john-right, .container .week-calendar-container .week-calendar .sound .col-james .panel-james-right, .container .week-calendar-container .week-calendar .sound .col-james .panel-mary-right, .container .week-calendar-container .week-calendar .sound .col-james .panel-john-right, .container .week-calendar-container .week-calendar .sound .col-mary .panel-james-right, .container .week-calendar-container .week-calendar .sound .col-mary .panel-mary-right, .container .week-calendar-container .week-calendar .sound .col-mary .panel-john-right, .container .week-calendar-container .week-calendar .sound .col-john .panel-james-right, .container .week-calendar-container .week-calendar .sound .col-john .panel-mary-right, .container .week-calendar-container .week-calendar .sound .col-john .panel-john-right, .container .week-calendar-container .week-calendar .sound .tv-production .panel-james-right, .container .week-calendar-container .week-calendar .sound .tv-production .panel-mary-right, .container .week-calendar-container .week-calendar .sound .tv-production .panel-john-right, .container .week-calendar-container .week-calendar .row-tv-production .col-james .panel-james-right, .container .week-calendar-container .week-calendar .row-tv-production .col-james .panel-mary-right, .container .week-calendar-container .week-calendar .row-tv-production .col-james .panel-john-right, .container .week-calendar-container .week-calendar .row-tv-production .col-mary .panel-james-right, .container .week-calendar-container .week-calendar .row-tv-production .col-mary .panel-mary-right, .container .week-calendar-container .week-calendar .row-tv-production .col-mary .panel-john-right, .container .week-calendar-container .week-calendar .row-tv-production .col-john .panel-james-right, .container .week-calendar-container .week-calendar .row-tv-production .col-john .panel-mary-right, .container .week-calendar-container .week-calendar .row-tv-production .col-john .panel-john-right, .container .week-calendar-container .week-calendar .row-tv-production .tv-production .panel-james-right, .container .week-calendar-container .week-calendar .row-tv-production .tv-production .panel-mary-right, .container .week-calendar-container .week-calendar .row-tv-production .tv-production .panel-john-right {
+  border-radius: 0 10px 10px 0;
+  width: 100%;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .foto .col-mary [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .foto .col-john [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .foto .tv-production [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .caster .col-james [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .caster .col-mary [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .caster .col-john [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .caster .tv-production [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .sound .col-james [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .sound .col-mary [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .sound .col-john [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .sound .tv-production [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="tv-production-panel"], .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="tv-production-panel"] {
+  border-radius: 0;
+  z-index: 0;
+  background-color: #52232c;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .foto .col-mary [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .foto .col-john [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .foto .tv-production [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .caster .col-james [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .caster .col-mary [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .caster .col-john [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .caster .tv-production [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .sound .col-james [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .sound .col-mary [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .sound .col-john [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .sound .tv-production [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-james [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-mary [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .col-john [class^="tv-production-panel"]:hover, .container .week-calendar-container .week-calendar .row-tv-production .tv-production [class^="tv-production-panel"]:hover {
+  cursor: pointer;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james .tv-production-panel-left, .container .week-calendar-container .week-calendar .foto .col-mary .tv-production-panel-left, .container .week-calendar-container .week-calendar .foto .col-john .tv-production-panel-left, .container .week-calendar-container .week-calendar .foto .tv-production .tv-production-panel-left, .container .week-calendar-container .week-calendar .caster .col-james .tv-production-panel-left, .container .week-calendar-container .week-calendar .caster .col-mary .tv-production-panel-left, .container .week-calendar-container .week-calendar .caster .col-john .tv-production-panel-left, .container .week-calendar-container .week-calendar .caster .tv-production .tv-production-panel-left, .container .week-calendar-container .week-calendar .sound .col-james .tv-production-panel-left, .container .week-calendar-container .week-calendar .sound .col-mary .tv-production-panel-left, .container .week-calendar-container .week-calendar .sound .col-john .tv-production-panel-left, .container .week-calendar-container .week-calendar .sound .tv-production .tv-production-panel-left, .container .week-calendar-container .week-calendar .row-tv-production .col-james .tv-production-panel-left, .container .week-calendar-container .week-calendar .row-tv-production .col-mary .tv-production-panel-left, .container .week-calendar-container .week-calendar .row-tv-production .col-john .tv-production-panel-left, .container .week-calendar-container .week-calendar .row-tv-production .tv-production .tv-production-panel-left {
+  border-radius: 10px 0 0 10px;
+  text-indent: 5px;
+  width: 180%;
+  z-index: 7;
+}
+
+.container .week-calendar-container .week-calendar .foto .col-james .tv-production-panel-right, .container .week-calendar-container .week-calendar .foto .col-mary .tv-production-panel-right, .container .week-calendar-container .week-calendar .foto .col-john .tv-production-panel-right, .container .week-calendar-container .week-calendar .foto .tv-production .tv-production-panel-right, .container .week-calendar-container .week-calendar .caster .col-james .tv-production-panel-right, .container .week-calendar-container .week-calendar .caster .col-mary .tv-production-panel-right, .container .week-calendar-container .week-calendar .caster .col-john .tv-production-panel-right, .container .week-calendar-container .week-calendar .caster .tv-production .tv-production-panel-right, .container .week-calendar-container .week-calendar .sound .col-james .tv-production-panel-right, .container .week-calendar-container .week-calendar .sound .col-mary .tv-production-panel-right, .container .week-calendar-container .week-calendar .sound .col-john .tv-production-panel-right, .container .week-calendar-container .week-calendar .sound .tv-production .tv-production-panel-right, .container .week-calendar-container .week-calendar .row-tv-production .col-james .tv-production-panel-right, .container .week-calendar-container .week-calendar .row-tv-production .col-mary .tv-production-panel-right, .container .week-calendar-container .week-calendar .row-tv-production .col-john .tv-production-panel-right, .container .week-calendar-container .week-calendar .row-tv-production .tv-production .tv-production-panel-right {
+  border-radius: 0 10px 10px 0;
+  width: 100%;
+}
+
+.container .week-calendar-container .week-calendar .avatar {
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.container .week-calendar-container .week-calendar .arrow {
+  width: 13px;
+  height: 13px;
+  transform: rotate(-90deg);
+  margin-left: 7px;
+}
+
+.container .mini-calendar-container {
+  background-color: #c2b4a9;
+  width: 25%;
+  height: 100vh;
+}
+
+.container .mini-calendar-container table {
+  background-color: #d7cec7;
+  font-family: "latoregular", "raleway", "sans-serif";
+  margin: 0 auto;
+  margin-top: 55px;
+  color: #76323F;
+}
+
+.container .mini-calendar-container table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.container .mini-calendar-container table .tr-month-name {
+  height: 35px;
+}
+
+.container .mini-calendar-container table .tr-month-name td {
+  border-bottom: 1px solid #565656;
+  font-weight: bolder;
+}
+
+.container .mini-calendar-container table .day-names {
+  text-transform: uppercase;
+  height: 35px;
+}
+
+.container .mini-calendar-container table .day-names td {
+  width: 45px;
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+.container .mini-calendar-container table tr[class^="week"] {
+  height: 42px;
+  transition: 0.1s;
+}
+
+.container .mini-calendar-container table tr[class^="week"]:hover {
+  background-color: #565656;
+  color: #d7cec7;
+}
+
+.container .mini-calendar-container table tr[class^="week"] .other-days {
+  color: silver;
+}
+
+.container .mini-calendar-container table tr[class^="week"] .july-note {
+  position: relative;
+  color: #d7cec7;
+  font-weight: bolder;
+}
+
+.container .mini-calendar-container table tr[class^="week"] .july-note .note {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #d7cec7;
+  transform: rotate(-225deg);
+}
+
+.container .mini-calendar-container table tr[class^="week"] .july-note .note:hover {
+  cursor: pointer;
+}
+
+.container .mini-calendar-container table .week-three {
+  background-color: #565656;
+  color: #d7cec7;
+}

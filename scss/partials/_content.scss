@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+  // border: $border;
+  margin: 0;
+}
+body {
+  font-family: $main-font;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  .week-calendar-container {
+    // background: $grain;
+    width: 75%;
+    .week-calendar {
+      margin: 0 auto;
+      margin-top: 60px;
+      width: 90%;
+      .row-week-menu {
+        height: 40px;
+        text-align: center;
+        .schedule-title {
+          font-size: 2rem;
+        }
+        .col-week-name {
+          color: darken($dusty, 10%);
+          font-weight: bolder;
+          font-size: 1.5rem;
+          height: 60px;
+          &:hover {
+            cursor: pointer;
+          }
+          span {
+            padding-top: 5px;
+            font-size: 1rem;
+          }
+          img {
+            // float: right;
+            // margin-right: 30px;
+            width: 15px;
+            height: 15px;
+            transform: rotate(-90deg);
+          }
+        }
+        .buttons {
+          height: 50px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          li {
+            border: 1px solid $blackboard;
+            padding: 2px;
+            // display: inline-block;
+            &:hover {
+              background-color: $oxblood;
+              color: $grain;
+              cursor: pointer;
+            }
+          }
+          .week-button {
+            background-color: $oxblood;
+            color: $grain;
+          }
+          .today-button {
+            margin-left: 5px;
+          }
+          .month-button {
+            border-left: none;
+          }
+        }
+      }
+      .row-day-names {
+        margin-top: 40px;
+        color: $blackboard;
+        text-align: center;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        span {
+          font-size: 2rem;
+          font-weight: bolder;
+        }
+      }
+      .tuesday, .thursday {
+        position: relative;
+        .note {
+          position: absolute;
+          top: -6px;
+          right: 0;
+          width: 0;
+          height: 0;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right:10px solid $oxblood;
+          transform: rotate(-225deg);
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .col-title {
+        text-align: center;
+        color: $blackboard;
+        display: flex;
+        align-items: center;
+        p {
+          font-weight: bolder;
+          text-indent: 3px;
+        }
+      }
+      .foto, .caster, .sound, .row-tv-production {
+        height: 46px;
+        .col-james, .col-mary, .col-john, .tv-production {
+          position: relative;
+          img {
+            position: absolute;
+            left:5px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          [class^="panel-james"], [class^="panel-mary"], [class^="panel-john"], [class^="tv-production-panel"] {
+            text-indent: 52px;
+            color: $grain;
+            font-size: 1rem;
+            font-weight: bolder;
+            letter-spacing: 4px;
+            position: absolute;
+            height: 40%;
+            top: 30%;
+            width: 105%;
+            background-color: $oxblood;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            z-index: 2;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .panel-james-mid, .panel-john-mid {
+            border-radius: 0;
+            z-index: 1;
+          }
+          .panel-james-right, .panel-mary-right, .panel-john-right {
+            border-radius: 0 10px 10px 0;
+            width: 100%;
+          }
+          [class^="tv-production-panel"] {
+            border-radius: 0;
+            z-index: 0;
+            background-color: darken($oxblood, 10%);
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .tv-production-panel-left {
+            border-radius: 10px 0 0 10px;
+            text-indent: 5px;
+            width: 180%;
+            z-index: 7;
+          }
+          .tv-production-panel-right {
+            border-radius: 0 10px 10px 0;
+            width: 100%;
+
+          }
+        }
+      }
+      .avatar {
+        border-radius: 50%;
+        z-index: 5;
+      }
+      .arrow {
+          width: 13px;
+          height: 13px;
+          transform: rotate(-90deg);
+          margin-left: 7px;
+      }
+    }
+  }
+  .mini-calendar-container {
+    background-color: darken($grain, 10%);
+    width: 25%;
+    height: 100vh;
+    table {
+      background-color: $grain;
+      font-family: $other-font, $main-font, 'sans-serif';
+      margin: 0 auto;
+      margin-top: 55px;
+      // color: darken($oxblood, 20%);
+      color: $oxblood;
+      td {
+        text-align: center;
+        vertical-align: middle;
+      }
+      .tr-month-name {
+        height: 35px;
+        td {
+          border-bottom: 1px solid $blackboard;
+          font-weight: bolder;
+        }
+      }
+      .day-names {
+        text-transform: uppercase;
+        height: 35px;
+        td {
+          width: 45px;
+          vertical-align: middle;
+          font-size: 0.9rem;
+        }
+      }
+      tr[class^="week"] {
+        height: 42px;
+        transition: 0.1s;
+        &:hover {
+          // height: 42px;
+          background-color: $blackboard;
+          color: $grain;
+        }
+        .other-days {
+          color: silver;
+        }
+        .july-note {
+          position: relative;
+          color: $grain;
+          font-weight: bolder;
+          .note {
+            position: absolute;
+            top: -2px;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right:5px solid $grain;
+            transform: rotate(-225deg);
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .week-three {
+        background-color: $blackboard;
+        color: $grain;
+
+      }
+    }
+  }
+}
